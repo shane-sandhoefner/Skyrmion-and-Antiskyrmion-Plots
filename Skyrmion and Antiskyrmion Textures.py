@@ -40,6 +40,8 @@ plt.xlim(-20,20)
 plt.ylim(-20,20)
 plt.xlabel('x (nm)', size=15)
 plt.ylabel('y (nm)', size=15)
+plt.tight_layout()
+plt.savefig('skyrmion_plot.pdf')  
 
 #nAS is n value for antiskyrmion, mphiAS is the phi component of magnetization for antiskyrmion
 nAS = 1
@@ -63,3 +65,5 @@ plt.xlim(-20,20)
 plt.ylim(-20,20)
 plt.xlabel('x (nm)', size=15)
 plt.ylabel('y (nm)', size=15)
+plt.tight_layout()
+plt.savefig('antiskyrmion_plot.pdf')  
