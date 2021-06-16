@@ -1,18 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 #Skyrmions and antiskyrmions are topologically protected magnetic textures, which are plotted below
 
 #Import libraries
 import numpy as np
 import matplotlib.pyplot as plt
-
-
-# In[2]:
-
 
 #Define x and y grids
 x, y = np.meshgrid(np.linspace(-30,30,30),
@@ -37,10 +30,6 @@ vS = np.sin(mtheta)*np.sin(mphiS)
 uS_normalized = uS/np.sqrt(uS**2+vS**2+np.cos(mtheta)**2)
 vS_normalized = vS/np.sqrt(uS**2+vS**2+np.cos(mtheta)**2)
 
-
-# In[6]:
-
-
 #Skyrmion plot
 plt.quiver(x, y, uS_normalized, vS_normalized, color='b')
 plt.xticks(fontsize=15)
@@ -52,10 +41,6 @@ plt.ylim(-20,20)
 plt.xlabel('x (nm)', size=15)
 plt.ylabel('y (nm)', size=15)
 
-
-# In[4]:
-
-
 #nAS is n value for antiskyrmion, mphiAS is the phi component of magnetization for antiskyrmion
 nAS = 1
 mphiAS = nAS*np.arctan2(x,y)-c
@@ -64,14 +49,9 @@ mphiAS = nAS*np.arctan2(x,y)-c
 uAS = np.sin(mtheta)*np.cos(mphiAS)
 vAS = np.sin(mtheta)*np.sin(mphiAS)
 
-
 #Normalize antiskyrmion magnetization vectors, where cos(mtheta) is the z-component of magnetization
 uAS_normalized = uAS/np.sqrt(uAS**2+vAS**2+np.cos(mtheta)**2)
 vAS_normalized = vAS/np.sqrt(uAS**2+vAS**2+np.cos(mtheta)**2)
-
-
-# In[5]:
-
 
 #Antiskyrmion plot
 plt.quiver(x, y, uAS_normalized, vAS_normalized, color='r')
@@ -83,4 +63,3 @@ plt.xlim(-20,20)
 plt.ylim(-20,20)
 plt.xlabel('x (nm)', size=15)
 plt.ylabel('y (nm)', size=15)
-
